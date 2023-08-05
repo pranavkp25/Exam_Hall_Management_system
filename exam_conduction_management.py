@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 import tkinter.messagebox as messagebox
 from database import*
+from seating import*
 
 def login():
     username = username_entry.get()
