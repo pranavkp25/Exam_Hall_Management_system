@@ -1,0 +1,43 @@
+
+hall-1
+	adr20cs001	adr20ec001	adr20cs002	adr20ec002	adr20cs003	
+	adr20ec003	adr20cs004	adr20ec004	adr20cs005	adr20ec005	
+	adr20cs006	adr20ec006	adr20cs007	adr20ec007	adr20cs008	
+	adr20ec008	adr20cs009	adr20ec009	adr20cs010	adr20ec010	
+
+
+hall-2
+	adr20cs011	adr20ec011	adr20cs012	adr20ec012	adr20cs013	
+	adr20ec013	adr20cs014	adr20ec014	adr20cs015	adr20ec015	
+	adr20cs016	adr20ec016	adr20cs017	adr20ec017	adr20cs018	
+	adr20ec018	adr20cs019	adr20ec019	adr20cs020	adr20ec020	
+
+
+hall-3
+	adr20cs021	adr20ec021	adr20cs022	adr20ec022	adr20cs023	
+	adr20ec023	adr20cs024	adr20ec024	adr20cs025	adr20ec025	
+	adr20cs026	adr20ec026	adr20cs027	adr20ec027	adr20cs028	
+	adr20ec028	adr20cs029	adr20ec029	adr20cs030	adr20ec030	
+
+
+hall-4
+	adr20cs031	----------	adr20cs032	----------	adr20cs033	
+	----------	adr20cs034	----------	adr20cs035	----------	
+	adr20cs036	----------	adr20cs037	----------	adr20cs038	
+	----------	adr20cs039	----------	adr20cs040	----------	
+
+
+hall-5
+	adr20cs041	----------	adr20cs042	----------	adr20cs043	
+	----------	adr20cs044	----------	adr20cs045	----------	
+	adr20cs046	----------	adr20cs047	----------	adr20cs048	
+	----------	adr20cs049	----------	adr20cs050	----------	
+
+
+hall-6
+	adr20cs051	----------	adr20cs052	----------	adr20cs053	
+	----------	adr20cs054	----------	adr20cs055	----------	
+	adr20cs056	----------	adr20cs057	----------	adr20cs058	
+	----------	adr20cs059	----------	adr20cs060	----------	
+
+
