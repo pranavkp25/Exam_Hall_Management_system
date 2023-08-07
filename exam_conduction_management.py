@@ -4,6 +4,7 @@ from tkinter import ttk
 import tkinter.messagebox as messagebox
 from database import *
 from seating import *
+from tkinter import PhotoImage
 
 
 def login():
@@ -213,6 +214,8 @@ def tv_focus_fun(e):
 
 def move_widget():
     x = moving_widget.winfo_x()
+    if (x > root.winfo_width()):
+        x = -moving_widget.winfo_width()
     new_x = x + 3  # Update the x-coordinate
     moving_widget.place(
         x=new_x, y=root.winfo_height() - widget_height
@@ -232,6 +235,7 @@ filename = PhotoImage(file="sce.png")
 background_label = Label(root, image=filename)
 
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 x = (screen_width // 2) - (window_width // 2)
@@ -254,23 +258,33 @@ notebook.pack(expand=True, fill="both")
 
 
 # Create and place widgets for login
+
+background_image_tab1 = PhotoImage(file="tab1.png")
+background_label_tab1 = tk.Label(tab_1, image=background_image_tab1)
+background_label_tab1.place(x=0, y=0, relwidth=1, relheight=1)
+
 login_frame_tab1 = tk.LabelFrame(
     tab_1,
     text="Login",
     padx=8,
     pady=8,
-    bg="#CCCCCC",
+    bg="lightblue",
     fg="#080202",
     font=("Times New Roman", 14),
 )
-login_frame_tab1.pack(pady=8)
+#login_frame_tab1.pack(pady=8)
+login_frame_tab1.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+
+# Customize font and color for login frame's labels and buttons
+label_font = ("Times New Roman", 14)
+label_fg = "lightblue"
 
 username_label_tab1 = tk.Label(
     login_frame_tab1,
     text="Username:",
-    bg="#CCCCCC",
+    bg="lightblue",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 username_label_tab1.grid(row=0, column=0, sticky=tk.E)
 username_entry_tab1 = tk.Entry(login_frame_tab1, font=("Times New Roman", 14))
@@ -279,9 +293,9 @@ username_entry_tab1.grid(row=0, column=1)
 password_label_tab1 = tk.Label(
     login_frame_tab1,
     text="Password:",
-    bg="#CCCCCC",
+    bg="lightblue",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 password_label_tab1.grid(row=1, column=0, sticky=tk.E)
 password_entry_tab1 = tk.Entry(login_frame_tab1, show="*", font=("Times New Roman", 14))
@@ -291,31 +305,37 @@ login_button_tab1 = tk.Button(
     login_frame_tab1,
     text="Login",
     command=login,
-    bg="#CCCCCC",
+    bg="lightblue",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 login_button_tab1.grid(row=2, column=1, pady=8)
 
 
+
 # Create and place widgets for student registration
+
+background_image_tab3 = PhotoImage(file="tab3.png")
+background_label_tab3 = tk.Label(tab_3, image=background_image_tab3)
+background_label_tab3.place(x=0, y=0, relwidth=1, relheight=1)
+
 registration_frame = tk.LabelFrame(
     tab_3,
     text="Student Registration",
     padx=8,
     pady=8,
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 registration_frame.pack(pady=8)
 
 usn_label = tk.Label(
     registration_frame,
-    text="USN:",
-    bg="#CCCCCC",
+    text="Username:",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 usn_label.grid(row=0, column=0, sticky=tk.E)
 usn_entry = tk.Entry(registration_frame, font=("Times New Roman", 14))
@@ -324,9 +344,9 @@ usn_entry.grid(row=0, column=1)
 pswd_label = tk.Label(
     registration_frame,
     text="Pswd:",
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 pswd_entry = tk.Entry(registration_frame, show="*", font=("Times New Roman", 14))
 pswd_label.grid(row=1, column=0, sticky=tk.E)
@@ -335,9 +355,9 @@ pswd_entry.grid(row=1, column=1)
 name_label = tk.Label(
     registration_frame,
     text="Name:",
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 name_label.grid(row=2, column=0, sticky=tk.E)
 name_entry = tk.Entry(registration_frame, font=("Times New Roman", 14))
@@ -346,9 +366,9 @@ name_entry.grid(row=2, column=1)
 department_label = tk.Label(
     registration_frame,
     text="Department:",
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 department_label.grid(row=3, column=0, sticky=tk.E)
 department_entry = tk.Entry(registration_frame, font=("Times New Roman", 14))
@@ -357,9 +377,9 @@ department_entry.grid(row=3, column=1)
 sem_label = tk.Label(
     registration_frame,
     text="Sem:",
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 sem_label.grid(row=4, column=0, sticky=tk.E)
 sem_entry = tk.Entry(registration_frame, font=("Times New Roman", 14))
@@ -368,7 +388,7 @@ sem_entry.grid(row=4, column=1)
 # bench_label = tk.Label(
 # registration_frame,
 # text="Bench:",
-# bg="#CCCCCC",
+# bg="grey",
 # fg="#080202",
 # font=("Times New Roman", 14),
 # )
@@ -380,34 +400,39 @@ register_button = tk.Button(
     registration_frame,
     text="Register",
     command=register_student,
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 register_button.grid(row=6, column=1, pady=8)
 register_button.config(state=tk.DISABLED)
 
 # Set registration frame background color
-registration_frame.configure(bg="#CCCCCC")
+registration_frame.configure(bg="grey")
 
 # Create and place widgets for search and display for search tab
+
+background_image_tab2 = PhotoImage(file="tab2.png")
+background_label_tab2 = tk.Label(tab_2, image=background_image_tab2)
+background_label_tab2.place(x=0, y=0, relwidth=1, relheight=1)
+
 search_frame = tk.LabelFrame(
     tab_2,
     text="Search",
     padx=8,
     pady=8,
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 search_frame.pack(pady=8)
 
 search_label = tk.Label(
     search_frame,
-    text="Search by USN :",
-    bg="#CCCCCC",
+    text="Search by Username :",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 search_label.grid(row=0, column=0, sticky=tk.E)
 search_entry_tab2 = tk.Entry(search_frame, font=("Times New Roman", 14))
@@ -417,9 +442,9 @@ search_button = tk.Button(
     search_frame,
     text="Search",
     command=lambda: search_students(search_entry_tab2, tv_tab2),
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 search_button.grid(row=0, column=2, padx=8)
 search_button.config(state=tk.DISABLED)
@@ -430,18 +455,18 @@ search_frame = tk.LabelFrame(
     text="Search",
     padx=8,
     pady=8,
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 search_frame.pack(pady=8)
 
 search_label = tk.Label(
     search_frame,
-    text="Search by USN :",
-    bg="#CCCCCC",
+    text="Search by Username :",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 search_label.grid(row=0, column=0, sticky=tk.E)
 search_entry_tab3 = tk.Entry(search_frame, font=("Times New Roman", 14))
@@ -451,9 +476,9 @@ search_button_reg = tk.Button(
     search_frame,
     text="Search",
     command=lambda: search_students(search_entry_tab3, tv_tab3),
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 search_button_reg.grid(row=0, column=2, padx=8)
 search_button_reg.config(state=tk.DISABLED)
@@ -464,13 +489,13 @@ tv_frame_tab2 = tk.LabelFrame(
     text="Search Result",
     padx=10,
     pady=10,
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 tv_frame_tab2.pack(pady=8)
 tv_tab2 = ttk.Treeview(
-    tv_frame_tab2, columns=(1, 2, 3, 4, 5), show="headings", height=5
+    tv_frame_tab2, columns=(1, 2, 3, 4, 5), show="headings", height=3
 )
 tv_tab2.pack(pady=2, fill="both", padx=2)
 tv_tab2.heading(1, text="USERNAME")
@@ -491,7 +516,7 @@ tv_frame_tab3 = tk.LabelFrame(
     text="Search Result",
     padx=10,
     pady=10,
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
     font=("Times New Roman", 14),
 )
@@ -510,6 +535,11 @@ tv_tab3.heading(4, text="SEM")
 tv_tab3.column(4, width=100)
 tv_tab3.heading(5, text="HALL")
 tv_tab3.column(5, width=100)
+
+style = ttk.Style()
+style.configure("Treeview.Heading", font=("Times New Roman", 11, "bold"))
+
+
 tv_tab3.bind("<Double 1>", tv_focus_fun)
 
 
@@ -518,7 +548,7 @@ edit_button = tk.Button(
     tab_3,
     text="Update",
     command=edit_student,
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
     font=("Times New Roman", 14),
 )
@@ -529,7 +559,7 @@ delete_button = tk.Button(
     tab_3,
     text="Delete",
     command=delete_student,
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
     font=("Times New Roman", 14),
 )
@@ -538,23 +568,28 @@ delete_button.config(state=tk.DISABLED)
 
 
 # Create and place widgets for seating arrangement
+
+background_image_tab4= PhotoImage(file="tab4.png")
+background_label_tab4 = tk.Label(tab_4, image=background_image_tab4)
+background_label_tab4.place(x=0, y=0, relwidth=1, relheight=1)
+
 seating_frame = tk.LabelFrame(
     tab_4,
     text="Seating Arrangement",
     padx=8,
     pady=8,
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 seating_frame.pack(pady=8)
 
 no_of_cls_label = tk.Label(
     seating_frame,
     text="Number of Classes:",
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 no_of_cls_label.grid(row=0, column=0, sticky=tk.E)
 no_of_cls_entry = tk.Entry(seating_frame, font=("Times New Roman", 14))
@@ -564,9 +599,9 @@ no_of_cls_entry.grid(row=0, column=1, columnspan=5)
 class_dmns_label = tk.Label(
     seating_frame,
     text="Exam Hall Dimensions :",
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
-    font=("Times New Roman", 14),
+    font=("Times New Roman", 14,"bold"),
 )
 class_dmns_label.grid(row=3, column=0, sticky=tk.E)
 class_dmns_entry = tk.Entry(seating_frame, font=("Times New Roman", 14))
@@ -625,7 +660,7 @@ def cls_detail_submit_btn_fun():
             text="Seating Allocation View",
             padx=8,
             pady=8,
-            bg="#CCCCCC",
+            bg="grey",
             fg="#080202",
             font=("Times New Roman", 14),
         )
@@ -649,7 +684,7 @@ def list_class_details_entry(r):
         text="Seating Arrangement",
         padx=8,
         pady=8,
-        bg="#CCCCCC",
+        bg="grey",
         fg="#080202",
         font=("Times New Roman", 14),
     )
@@ -660,7 +695,7 @@ def list_class_details_entry(r):
         cls_adr_label = tk.Label(
             list_class_details_entry_frame,
             text="adr: ",
-            bg="#CCCCCC",
+            bg="grey",
             fg="#080202",
             font=("Times New Roman", 14),
         )
@@ -674,7 +709,7 @@ def list_class_details_entry(r):
         cls_from_label = tk.Label(
             list_class_details_entry_frame,
             text="from: ",
-            bg="#CCCCCC",
+            bg="grey",
             fg="#080202",
             font=("Times New Roman", 14),
         )
@@ -688,7 +723,7 @@ def list_class_details_entry(r):
         cls_to_label = tk.Label(
             list_class_details_entry_frame,
             text="to: ",
-            bg="#CCCCCC",
+            bg="grey",
             fg="#080202",
             font=("Times New Roman", 14),
         )
@@ -704,7 +739,7 @@ def list_class_details_entry(r):
         tab_4,
         text="Submit",
         command=cls_detail_submit_btn_fun,
-        bg="#CCCCCC",
+        bg="grey",
         fg="#080202",
         font=("Times New Roman", 14),
     )
@@ -715,7 +750,7 @@ view_allotment_button = tk.Button(
     seating_frame,
     text="Enter",
     command=lambda: list_class_details_entry(int(no_of_cls_entry.get())),
-    bg="#CCCCCC",
+    bg="grey",
     fg="#080202",
     font=("Times New Roman", 14),
 )
@@ -729,14 +764,13 @@ widget_height = 50
 moving_widget = tk.Label(
     root,
     text="Exam Hall Management System",
-    bg="lightblue",
-    font=("Times New Roman", 20, "bold"),
+       font=("Times New Roman", 20, "bold"),
 )
 moving_widget.place(
     x=50, y=root.winfo_height() - widget_height
 )  # Initial position at the bottom
 
 move_widget()
-
+root.state('zoomed')
 # Run the main event loop
 root.mainloop()
