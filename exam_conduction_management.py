@@ -231,10 +231,10 @@ root.title("Exam Conduction Management")
 window_width = 600
 window_height = 400
 
-filename = PhotoImage(file="sce.png")
-background_label = Label(root, image=filename)
+#filename = PhotoImage(file="sce.png")
+#background_label = Label(root, image=filename)
 
-background_label.place(x=0, y=0, relwidth=1, relheight=1)
+#background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
@@ -268,7 +268,7 @@ login_frame_tab1 = tk.LabelFrame(
     text="Login",
     padx=8,
     pady=8,
-    bg="lightblue",
+    bg="grey",
     fg="#080202",
     font=("Times New Roman", 14),
 )
@@ -277,12 +277,12 @@ login_frame_tab1.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
 # Customize font and color for login frame's labels and buttons
 label_font = ("Times New Roman", 14)
-label_fg = "lightblue"
+label_fg = "grey"
 
 username_label_tab1 = tk.Label(
     login_frame_tab1,
     text="Username:",
-    bg="lightblue",
+    bg="grey",
     fg="#080202",
     font=("Times New Roman", 14,"bold"),
 )
@@ -293,7 +293,7 @@ username_entry_tab1.grid(row=0, column=1)
 password_label_tab1 = tk.Label(
     login_frame_tab1,
     text="Password:",
-    bg="lightblue",
+    bg="grey",
     fg="#080202",
     font=("Times New Roman", 14,"bold"),
 )
@@ -305,7 +305,7 @@ login_button_tab1 = tk.Button(
     login_frame_tab1,
     text="Login",
     command=login,
-    bg="lightblue",
+    bg="grey",
     fg="#080202",
     font=("Times New Roman", 14,"bold"),
 )
@@ -614,7 +614,7 @@ cls_details_list = []
 def cls_detail_submit_btn_fun():
     try:
         students = []
-        noOfSubjects = int(no_of_cls_entry.get())
+        # noOfSubjects = int(no_of_cls_entry.get())
         row, col = (int(x) for x in class_dmns_entry.get().split("x"))
         for cls_details in cls_details_list:
             if (
